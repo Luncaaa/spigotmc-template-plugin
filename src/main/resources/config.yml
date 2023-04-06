@@ -1,0 +1,4 @@
+# The plugin's prefix. Will appear in front of some messages.
+prefix: "&7[&6NAME&7] "
+# Which file from the langs folder to get the messages from.
+language: "en.yml"

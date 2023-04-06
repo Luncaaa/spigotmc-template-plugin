@@ -1,0 +1,16 @@
+commands:
+  # General
+  # %subcommand% - El nombre del subcomando. Ejemplo: /cmd reload -> %command% será "reload"
+  command-not-found: "&c¡El comando &b%subcommand% &cno existe!"
+  # %subcommand% - El nombre del subcomando.
+  # %description% - La descripción.
+  # %usage% - Cómo usarlo.
+  # %minArguments% - El número de argumentos que se necesitan para ejecutar el comando. (no incluye el subcomando).
+  command-usage: "&7Uso correcto: &c%usage%"
+  use-help-command: "&cUtiliza &b/cmd help &cpara ver la lista de comandos existentes."
+  not-enough-arguments: "&c¡Necesitas introducir más argumentos para ejecutar este comando!"
+  player-command-only: "&c¡Sólo jugadores pueden ejecutar este comando!"
+  no-permission: "&c¡No tienes permiso para ejecutar este comando!"
+
+  # Comando de recarga
+  reload-successful: "&aEl archivo de configuración ha sido recargado existosamente."
