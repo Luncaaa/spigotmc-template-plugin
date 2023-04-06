@@ -1,0 +1,11 @@
+main: me.lucaaa.template.Main
+description: "Plugin's description"
+name: "Name"
+version: 1.0
+author: Lucaaa
+prefix: PREFIX
+api-version: 1.19
+
+commands:
+  cmd:
+    description: Main command.
