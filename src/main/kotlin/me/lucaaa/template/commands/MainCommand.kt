@@ -82,7 +82,7 @@ class MainCommand : CommandExecutor, TabCompleter {
         }
 
         // Command's second argument.
-        if (args.size == 2 && subCommands.containsKey(args[0])) {
+        if (args.size >= 2 && subCommands.containsKey(args[0])) {
             completions = subCommands[args[0]]!!.getTabCompletions(sender, args)
         }
 
