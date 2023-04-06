@@ -51,7 +51,7 @@ class MessagesManager(langConfig: YamlConfiguration) {
      *
      * @param message The message in which you want to replace the placeholders.
      * @param placeholders A map with placeholders. The map's keys will be replaced with the values in the message.
-     * @return
+     * @return The message with the placeholders replaced.
      */
     private fun replacePlaceholders(message: String, placeholders: HashMap<String, String>): String {
         var newMessage = message
