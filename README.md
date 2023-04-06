@@ -4,7 +4,7 @@ A base plugin which includes a command handler and some managers, written in kot
 
 ## How to create the jar
 
-1. Clone the file using `git clone https://github.com/Luncaaa/spigotmc-template-plugin.git`
+1. Clone the repository using `git clone https://github.com/Luncaaa/spigotmc-template-plugin.git`
 2. Select the branch that you want (java or kotlin version)
 3. Create the jar using `.\gradlew jar` or `.\gradlew shadowJar` if you are using the kotlin version.
 4. The jar will be located in `build\libs`
