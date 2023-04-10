@@ -16,7 +16,9 @@ public class HelpSubCommand extends SubCommandsFormat {
     @Override
     public void run(CommandSender sender, String[] args) {
         for (SubCommandsFormat value : Main.subCommands.values()) {
-            sender.sendMessage(value.usage + " - " + value.description);
+            if (value.neededPermission == null || sender.hasPermission(value.neededPermission) || sender.hasPermission("plugin.admin")) {
+                sender.sendMessage(value.usage + " - " + value.description);
+            }
         }
     }
 }
