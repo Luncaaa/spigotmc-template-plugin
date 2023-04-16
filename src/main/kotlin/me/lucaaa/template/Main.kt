@@ -28,9 +28,14 @@ class Main : JavaPlugin() {
 
         // Reload the config files.
         fun reloadConfigs() {
+            // Creates the config and lang files.
             this.createConfigs()
             this.mainConfig =  ConfigManager(this.plugin, "config.yml").getConfig()
+            
+            // Loads the lang file the user wants.
             this.langConfig = ConfigManager(this.plugin, "langs" + File.separator + this.mainConfig.get("language")).getConfig()
+            
+            // Managers
             this.messagesManager = MessagesManager(this.langConfig)
         }
 
@@ -45,16 +50,8 @@ class Main : JavaPlugin() {
     override fun onEnable() {
         plugin = this
 
-        // Saves the default config file and adds it to the mainConfig variable.
-        this.saveDefaultConfig()
-        mainConfig = this.config as YamlConfiguration
-
-        // Creates the lang files and loads the lang file the user wants.
-        createConfigs()
-        langConfig = ConfigManager(this, "langs" + File.separator + mainConfig.get("language")).getConfig()
-
-        // Managers
-        messagesManager = MessagesManager(langConfig)
+        // Set up files and managers.
+        reloadConfigs()
 
         // Registers the main command and adds tab completions.
         this.getCommand("cmd")?.setExecutor(MainCommand())
