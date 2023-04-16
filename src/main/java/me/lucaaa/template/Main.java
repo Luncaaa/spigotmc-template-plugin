@@ -31,16 +31,8 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         plugin = this;
 
-        // Saves the default config file and adds it to the mainConfig variable.
-        this.saveDefaultConfig();
-        mainConfig = (YamlConfiguration) this.getConfig();
-
-        // Creates the lang files and loads the lang file the user wants.
-        createConfigs();
-        langConfig = new ConfigManager(this, "langs" + File.separator + mainConfig.get("language")).getConfig();
-
-        // Managers
-        messagesManager = new MessagesManager(langConfig);
+        // Set up files and managers.
+        this.reloadConfig();
 
         // Registers the main command and adds tab completions.
         Objects.requireNonNull(this.getCommand("cmd")).setExecutor(new MainCommand());
@@ -51,9 +43,14 @@ public class Main extends JavaPlugin {
 
     // Reload the config files.
     public static void reloadConfigs() {
+        // Creates the config and lang files.
         createConfigs();
         mainConfig =  new ConfigManager(plugin, "config.yml").getConfig();
+        
+        // Loads the lang file the user wants.
         langConfig = new ConfigManager(plugin, "langs" + File.separator + mainConfig.get("language")).getConfig();
+        
+        // Managers
         messagesManager = new MessagesManager(langConfig);
     }
 
