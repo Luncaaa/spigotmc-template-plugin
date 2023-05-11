@@ -32,7 +32,7 @@ public class Main extends JavaPlugin {
         plugin = this;
 
         // Set up files and managers.
-        this.reloadConfig();
+        reloadConfigs();
 
         // Registers the main command and adds tab completions.
         Objects.requireNonNull(this.getCommand("cmd")).setExecutor(new MainCommand());
